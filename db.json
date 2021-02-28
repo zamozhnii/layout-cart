@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Handmade Stainless Steel Massive Wolf Chain with Odin’s Protection Charm - 50cm / 20in",
+            "quantity": 9,
+            "price": 29.95,
+            "discount": 19.95
+        },
+        {
+            "id": 2,
+            "name": "Handmade Massive Stainless Steel Wolf Head Necklace with Nordic Wolf Pendant - 50cm / 20in",
+            "quantity": 2,
+            "price": 29.95,
+            "discount": 19.95
+        },
+        {
+            "id": 3,
+            "name": "Kinf Chain Wolf Head Viking Bracelet - 19cm / 7.4in",
+            "quantity": 4,
+            "price": 29.95,
+            "discount": 19.95
+        }
+    ]
+  }
