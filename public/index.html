@@ -5,9 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container">
+            <div class="headerWrapper d-flex align-center justify-between">
+                <button class="headerButton-mb" type="button">
+                    <div class="headerButton-mb--Animated">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <a href="/" class="headerLogo">
+                    <img src="img/logo.png" alt="Logo Ancient Treasures">
+                </a>
+                <nav class="headerNavigation d-flex align-center">
+                    <ul class="headerNavigationList d-flex align-center">
+                        <li class="headerNavigationList--item"><a href="#">Vikings</a></li>
+                        <li class="headerNavigationList--item"><a href="#">Ancient Egypt</a></li>
+                        <li class="headerNavigationList--item"><a href="#">Celtics</a></li>
+                        <li class="headerNavigationList--item selected"><a href="#">Sale</a></li>
+                        <li class="headerNavigationList--item searchButton">
+                            <button>
+                                <img class="dark" src="img/search.svg" alt="Search icon">
+                                <img class="white" src="img/searchW.svg" alt="Search icon">
+                            </button>
+                        </li>
+                    </ul>
+                    <a class="headerNavigationCart" href="#">
+                        <img src="img/cart.svg" alt="Cart icon">
+                        <span>8</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <section class="mainWrap d-flex">
+                <div class="mainSliderWrap">
+                    <div class="mainSlider">
+                        <button class="mainSliderBtn prev"><img src="img/arrow-left.svg" alt=""></button>
+                        <div class="mainSliderItem fade"><img src="img/product.jpeg" alt="Product1"></div>
+                        <div class="mainSliderItem fade"><img src="img/02.jpg" alt="Product2"></div>
+                        <div class="mainSliderItem fade"><img src="img/03.jpg" alt="Product3"></div>
+                        <button class="mainSliderBtn next"><img src="img/arrow-right.svg" alt=""></button>
+                    </div>
+                    <div class="mainSliderNavigation d-flex align-center">
+                        <div class="mainSliderNavigationItem" data-target="1"><img src="img/product.jpeg" alt="Product1"></div>
+                        <div class="mainSliderNavigationItem" data-target="2"><img src="img/02.jpg" alt="Product2"></div>
+                        <div class="mainSliderNavigationItem" data-target="3"><img src="img/03.jpg" alt="Product3"></div>
+                    </div>
+                </div>
+                <div class="mainProductInfo">
+                    <h1 class="mainProductInfo--title">Handmade Stainless Steel Kings Chain Viking Geri And Freki Mjolnir Necklace</h1>
+                    <form action="">
+                        <p class="mainProductInfo--length">Choose your length</p>
+                        <div class="mainProductInfo--select">
+                            <div class="mainProductInfo--selectCustom d-flex flex-column">
+                                <div class="mainProductInfo--selectCustomTrigger d-flex align-center justify-between"><span>60 CM (24 INCHES)</span>
+                                    <div class="arrow"></div>
+                                </div>
+                                <div class="mainProductInfo--selectCustomOptions">
+                                    <span class="mainProductInfo--selectCustomOption selected" data-value="60">60 CM (24 INCHES)</span>
+                                    <span class="mainProductInfo--selectCustomOption" data-value="80">80 CM (30 INCHES)</span>
+                                    <span class="mainProductInfo--selectCustomOption" data-value="100">100 CM (36 INCHES)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mainProductInfo--sum d-flex">$19.95 <sup>Tax included</sup></p>
+                        <div class="mainProductInfo--number d-flex align-center">
+                            <div class="mainProductInfo--numberInput">
+                                <button class="mainProductInfo--numberInputBtn btnDown" type="button">-</button>
+                                <input class="mainProductInfo--InputQuantity" min="0" name="quantity" value="1" type="number">
+                                <button class="mainProductInfo--numberInputBtn btnUp" type="button">+</button>
+                            </div>
+                            <button class="mainProductInfo--addToCart" type="submit">Add To Cart</button>
+                        </div>
+                    </form>
+                    <h3 class="mainProductInfo--SubTitle">Handmade Chain Geri and Freki Viking Necklace with Thor Hammer Mjolnir!</h3>
+                    <p class="mainProductInfo--description">The Kings chain was worn by Viking kings as a status symbol as the name applies. This is a 100% handmade Stainless Steel Chain. The crafting is a very time consuming process to put together the chain link by link. The hand made chain connects together with a lobster clamp.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="js/app.js"></script>
 </body>
 </html>
