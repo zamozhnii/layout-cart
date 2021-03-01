@@ -1,3 +1,96 @@
+// CART METHODS
+// ADD
+// REMOVE
+// CLEAR
+
+function setCartData(o){
+    localStorage.setItem('test', JSON.stringify(o));
+    return false;
+}
+
+function getCartData(){
+    return JSON.parse(localStorage.getItem('test'));
+}
+
+function checkQuantityInStorage() {
+    var dataCart = getCartData();
+    let quantCart = document.querySelector('.headerNavigationCart span');
+    if(dataCart !== null){
+        var quantityInStorage = 0;
+        for(let _dataCart in dataCart) {
+            quantityInStorage++;
+        }
+        if(quantityInStorage === 0) {
+            quantityInStorage = 1;
+        }
+        if(quantityInStorage > 0) {
+            quantCart.style.display = "block";
+            quantCart.innerHTML = quantityInStorage;
+        } 
+    } else {
+        quantCart.style.display = "none";
+        quantCart.innerHTML = 0;
+    }
+}
+
+function addToCart(id) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsondata = JSON.parse(this.responseText);
+            jsondata.forEach(element => {
+                var cartData;
+                if(element.id === id) {
+                    cartData = getCartData() || {};
+                    if(cartData.hasOwnProperty(id)){
+                        cartData[id][3] += 1;
+                    } else {
+                        cartData[id] = [element.name, element.price, element.discount, 1];
+                    }
+                    setCartData(cartData);
+                    checkQuantityInStorage();
+                }
+            });
+            return false;
+        }
+    };
+    xhttp.open("GET", "https://my-json-server.typicode.com/zamozhnii/layout-cart/products", true);
+    xhttp.send();
+}
+
+// addToCart(1);
+addToCart(6);
+addToCart(2);
+addToCart(3);
+
+function clearCart(key) {
+    localStorage.removeItem(key);
+    checkQuantityInStorage();
+}
+
+// clearCart('test');
+
+function removeFromCart(id) {
+    var cartData = getCartData();
+    var newDataCart = {};
+    for(const data in cartData) {
+        if(data === "" + id) {
+            continue;
+        } else {
+            newDataCart[data] = cartData[data];
+        }
+    }
+    clearCart('test');
+    setCartData(newDataCart);
+    checkQuantityInStorage();
+}
+
+removeFromCart(1);
+// removeFromCart(2);
+// removeFromCart(3);
+
+// ./ CART METHODS
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -100,3 +193,5 @@ window.addEventListener('click', function(e) {
         headerMBbutton.querySelector('.headerButton-mb--Animated').classList.remove('open');
     }
 });
+
+
